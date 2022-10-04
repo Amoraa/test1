@@ -11,7 +11,7 @@ function onHttpStart(){
     console.log("Express http server listening on: " + HTTP_PORT);
 }
 
-app.use(express.static('public'));
+app.use(express.static('image'));
 
 app.get("/test1", function(req, res){
     res.sendFile(path.join(__dirname, "/pages/test1.html"));
@@ -30,7 +30,7 @@ app.get("/", function(req, res){
 
 app.get('*',function(req,res)
 {
-    res.status(404).send("errrror, you are lost, hope not in life");
+    res.status(404).send("You are lost, take another road <br><img width=400px hight=400px src='/road.jpg'>");
 })
 
 
